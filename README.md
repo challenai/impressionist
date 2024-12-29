@@ -8,7 +8,7 @@ if you found some other shapes usable, just add it to the lib.
 
 `npm install @pattaya/pather --save`
 
-### Use
+### Usage
 
 import the Circle, Rectangle from pather library,  
 and stroke it!
