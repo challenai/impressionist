@@ -1,4 +1,5 @@
 export class Capsule {
+  // draw a row capsule
   static Row(x: number, y: number, width: number, height: number): string {
     if (width < height) return "";
 

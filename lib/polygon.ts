@@ -1,4 +1,5 @@
 export class Polygon {
+  // draw a polygon with given vertices
   static Basic(points: number[][]): string {
     const n = points.length;
     if (n < 3) return "";
@@ -12,7 +13,7 @@ export class Polygon {
     return path;
   }
 
-
+  // draw a regular polygon with given radius
   static Regular(x: number, y: number, sides: number, radius: number): string {
     const base = 2 * Math.PI / sides;
     let path = ""

@@ -1,4 +1,5 @@
 export class Curve {
+  // draw a basic curve with control point (cx, cy)
   static Basic(
     x: number,
     y: number,

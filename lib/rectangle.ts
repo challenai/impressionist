@@ -1,3 +1,8 @@
+// radius of rectangle:
+// top-left
+// top-right
+// bottom-left
+// bottom-right
 export interface Radius4 {
   tl: number;
   tr: number;
@@ -6,6 +11,7 @@ export interface Radius4 {
 }
 
 export class Rectangle {
+  // draw a basic rectangle
   static Basic(x: number, y: number, width: number, height: number): string {
     return `
       M${x - width / 2} ${y - height / 2}
@@ -16,6 +22,7 @@ export class Rectangle {
     `;
   }
 
+  // draw a round rectangle
   static Round(
     x: number,
     y: number,
@@ -26,11 +33,17 @@ export class Rectangle {
     if (typeof radius === "number") {
       radius = { tl: radius, tr: radius, br: radius, bl: radius };
     }
+    const maxLen = Math.min(width, height) / 2;
 
     if (!radius.tl) radius.tl = 0;
     if (!radius.tr) radius.tr = 0;
     if (!radius.bl) radius.bl = 0;
     if (!radius.br) radius.br = 0;
+
+    radius.tl = Math.min(radius.tl, maxLen);
+    radius.tr = Math.min(radius.tr, maxLen);
+    radius.bl = Math.min(radius.bl, maxLen);
+    radius.br = Math.min(radius.br, maxLen);
 
     return `
       M${x - (width - radius.tl - radius.tr) / 2} ${y - height / 2}
@@ -46,7 +59,7 @@ export class Rectangle {
     `;
   }
 
-
+  // draw a diamond shape
   static Diamond(x: number, y: number, width: number, height: number): string {
     const rx = width / 2;
     const ry = height / 2;
@@ -59,6 +72,7 @@ export class Rectangle {
     `;
   }
 
+  // draw a parallelogram shape
   static Parallelogram(x: number, y: number, width: number, height: number, offset: number): string {
     const mx = (width + Math.abs(offset)) / 2;
     return `
@@ -68,5 +82,54 @@ export class Rectangle {
       l${-width} 0
       Z
     `;
+  }
+
+  // draw a basic rectangle aligned with top-left
+  static BasicAligned(
+    x: number,
+    y: number,
+    width: number,
+    height: number,
+  ): string {
+    return this.Basic(x + width / 2, y + height / 2, width, height);
+  }
+
+  // draw a round rectangle aligned with top-left
+  static RoundAligned(
+    x: number,
+    y: number,
+    width: number,
+    height: number,
+    radius: number | Radius4
+  ): string {
+    return this.Round(x + width / 2, y + height / 2, width, height, radius);
+  }
+
+  // draw a diamond shape aligned with top
+  static DiamondAlignedTop(
+    x: number,
+    y: number,
+    width: number,
+    height: number,
+  ): string {
+    return this.Diamond(x, y + height / 2, width, height);
+  }
+
+  // draw a diamond shape aligned with left
+  static DiamondAlignedLeft(
+    x: number,
+    y: number,
+    width: number,
+    height: number,
+  ): string {
+    return this.Diamond(x + width / 2, y, width, height);
+  }
+
+  // draw a parallelogram shape aligned with top-left
+  static ParallelogramAligned(x: number, y: number, width: number, height: number, offset: number): string {
+    if (offset < 0) {
+      return this.Parallelogram(x + width / 2 - offset / 2, y + height / 2, width, height, offset);
+    }
+    return this.Parallelogram(x + width / 2 + offset / 2, y + height / 2, width, height, offset);
   }
 }
