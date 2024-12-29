@@ -1,4 +1,5 @@
 export class Triangle {
+  // draw an equilateral triangle
   static Equilateral(x: number, y: number, length: number): string {
     const h = Math.sin(Math.PI / 3) * length;
     const mx = length / 2;
@@ -10,6 +11,7 @@ export class Triangle {
     `;
   }
 
+  // draw an isosceles triangle
   static Isosceles(x: number, y: number, bottom: number, height: number): string {
     const mx = bottom / 2;
     return `
@@ -20,6 +22,7 @@ export class Triangle {
     `;
   }
 
+  // draw an equilateral triangle aligned with left
   static EquilateralAlignedLeft(x: number, y: number, length: number): string {
     const h = Math.sin(Math.PI / 3) * length;
     const mx = length / 2;
@@ -31,6 +34,7 @@ export class Triangle {
     `;
   }
 
+  // draw an equilateral triangle aligned with top
   static EquilateralAlignedTop(x: number, y: number, length: number): string {
     const h = Math.sin(Math.PI / 3) * length;
     const mx = length / 2;
@@ -42,6 +46,7 @@ export class Triangle {
     `;
   }
 
+  // draw an equilateral triangle aligned with right
   static EquilateralAlignedRight(x: number, y: number, length: number): string {
     const h = Math.sin(Math.PI / 3) * length;
     const mx = length / 2;
@@ -53,6 +58,7 @@ export class Triangle {
     `;
   }
 
+  // draw an isosceles triangle aligned with left
   static IsoscelesAlignedLeft(x: number, y: number, bottom: number, height: number): string {
     const mx = bottom / 2;
     return `
@@ -63,6 +69,7 @@ export class Triangle {
     `;
   }
 
+  // draw an isosceles triangle aligned with top
   static IsoscelesAlignedTop(x: number, y: number, bottom: number, height: number): string {
     const mx = bottom / 2;
     return `
@@ -73,6 +80,7 @@ export class Triangle {
     `;
   }
 
+  // draw an isosceles triangle aligned with right
   static IsoscelesAlignedRight(x: number, y: number, bottom: number, height: number): string {
     const mx = bottom / 2;
     return `

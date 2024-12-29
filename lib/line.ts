@@ -1,8 +1,10 @@
 export class Line {
+  // draw a basic line
   static Basic(x: number, y: number, x1: number, y1: number): string {
     return `M${x} ${y} L${x1} ${y1}`;
   }
 
+  // draw a fold line
   static Fold(points: number[][]): string {
     if (!points || points.length === 1) return "";
 

@@ -1,3 +1,8 @@
+// radius of rectangle:
+// top-left
+// top-right
+// bottom-left
+// bottom-right
 export interface Radius4 {
   tl: number;
   tr: number;
@@ -6,6 +11,7 @@ export interface Radius4 {
 }
 
 export class Rectangle {
+  // draw a basic rectangle
   static Basic(x: number, y: number, width: number, height: number): string {
     return `
       M${x - width / 2} ${y - height / 2}
@@ -16,6 +22,7 @@ export class Rectangle {
     `;
   }
 
+  // draw a round rectangle
   static Round(
     x: number,
     y: number,
@@ -52,7 +59,7 @@ export class Rectangle {
     `;
   }
 
-
+  // draw a diamond shape
   static Diamond(x: number, y: number, width: number, height: number): string {
     const rx = width / 2;
     const ry = height / 2;
@@ -65,6 +72,7 @@ export class Rectangle {
     `;
   }
 
+  // draw a parallelogram shape
   static Parallelogram(x: number, y: number, width: number, height: number, offset: number): string {
     const mx = (width + Math.abs(offset)) / 2;
     return `
@@ -76,6 +84,7 @@ export class Rectangle {
     `;
   }
 
+  // draw a basic rectangle aligned with top-left
   static BasicAligned(
     x: number,
     y: number,
@@ -85,6 +94,7 @@ export class Rectangle {
     return this.Basic(x + width / 2, y + height / 2, width, height);
   }
 
+  // draw a round rectangle aligned with top-left
   static RoundAligned(
     x: number,
     y: number,
@@ -95,6 +105,7 @@ export class Rectangle {
     return this.Round(x + width / 2, y + height / 2, width, height, radius);
   }
 
+  // draw a diamond shape aligned with top
   static DiamondAlignedTop(
     x: number,
     y: number,
@@ -104,6 +115,7 @@ export class Rectangle {
     return this.Diamond(x, y + height / 2, width, height);
   }
 
+  // draw a diamond shape aligned with left
   static DiamondAlignedLeft(
     x: number,
     y: number,
@@ -113,6 +125,7 @@ export class Rectangle {
     return this.Diamond(x + width / 2, y, width, height);
   }
 
+  // draw a parallelogram shape aligned with top-left
   static ParallelogramAligned(x: number, y: number, width: number, height: number, offset: number): string {
     if (offset < 0) {
       return this.Parallelogram(x + width / 2 - offset / 2, y + height / 2, width, height, offset);

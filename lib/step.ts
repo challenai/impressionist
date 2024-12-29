@@ -1,4 +1,5 @@
 export class Step {
+  // draw a baisc step line
   // points example: [[0, 220], [1, 120]]
   // 0: x, 1: y
   static Basic(x: number, y: number, points: number[][]): string {
@@ -17,6 +18,9 @@ export class Step {
     return path;
   }
 
+  // draw a round step line with given radius
+  // points example: [[0, 220], [1, 120]]
+  // 0: x, 1: y
   static Round(
     x: number,
     y: number,
