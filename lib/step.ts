@@ -1,7 +1,26 @@
+/**
+ * draw a stepline
+ */
 export class Step {
-  // draw a baisc step line
-  // points example: [[0, 220], [1, 120]]
-  // 0: x, 1: y
+  /**
+   * draw a baisc step line
+   * 
+   * @param x the start point x of the step line
+   * 
+   * @param y the start point y of the step line
+   * 
+   * @param points the points' array of the step line, 0: x axis, 1: y axis
+   * 
+   * **Example Usage**
+   * 
+   * ```jsx
+   * const step = Step.Basic([
+   *   [0, 120],
+   *   [1, 80],
+   *   [0, 70],
+   * ]);
+   * ```
+   */
   static Basic(x: number, y: number, points: number[][]): string {
     if (!points) return "";
 
@@ -18,9 +37,27 @@ export class Step {
     return path;
   }
 
-  // draw a round step line with given radius
-  // points example: [[0, 220], [1, 120]]
-  // 0: x, 1: y
+  /**
+   * draw a round step line with given radius
+   * 
+   * @param x the start point x of the step line
+   * 
+   * @param y the start point y of the step line
+   * 
+   * @param points the points' array of the step line, 0: x axis, 1: y axis
+   * 
+   * @param radius the radius of the step line
+   * 
+   * **Example Usage**
+   * 
+   * ```jsx
+   * const step = Step.Round([
+   *   [0, 120],
+   *   [1, 80],
+   *   [0, 70],
+   * ], 20);
+   * ```
+   */
   static Round(
     x: number,
     y: number,
