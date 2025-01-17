@@ -6,7 +6,7 @@
     "target": "ES2022",
     "module": "ESNext",
     "moduleDetection": "force",
-    "removeComments": true,
+    "removeComments": false,
     "declaration": true,
     "allowJs": false,
     "moduleResolution": "Node",
