@@ -1,5 +1,28 @@
+/**
+ * draw a curve
+ */
 export class Curve {
-  // draw a basic curve with control point (cx, cy)
+  /**
+   * draw a basic curve with control point (cx, cy)
+   * 
+   * @param x the start point x of the curve
+   * 
+   * @param y the start point y of the curve
+   * 
+   * @param x1 the end point x of the curve
+   * 
+   * @param y1 the end point y of the curve
+   * 
+   * @param controlPointX the control point x of the curve
+   * 
+   * @param controlPointY the control point y of the curve
+   * 
+   * **Example Usage**
+   * 
+   * ```jsx
+   * const curve = Curve.Basic(20, 10, 30, 50, 25, 50);
+   * ```
+   */
   static Basic(
     x: number,
     y: number,
@@ -11,7 +34,23 @@ export class Curve {
     return `M${x} ${y} Q${controlPointX} ${controlPointY} ${x1} ${y1}`;
   }
 
-  // curve with multi control point
+  /**
+   * draw a curve with multi control point
+   * 
+   * @param points the points' array of the curve
+   * 
+   * @param radius the radius of the curve
+   * 
+   * **Example Usage**
+   * 
+   * ```jsx
+   * const curve = Curve.Multi([
+   *   [420, 300],
+   *   [520, 460],
+   *   [720, 300],
+   * ], 10);
+   * ```
+   */
   static Multi(
     points: number[][],
     radius: number

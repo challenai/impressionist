@@ -34,7 +34,7 @@ You can double click the `index.html` in `/exmaples` directory to run the exampl
 
 ```javascript
 // import shapes
-import { Rectangle, Polygon, Curve, Circle } from "./pather.min.js";
+import { Rectangle, Polygon, Curve, Circle } from "@pattaya/pather";
 
 const canvas = document.getElementById("graph");
 const ctx = canvas.getContext("2d");
