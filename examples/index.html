@@ -4,32 +4,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>example</title>
+    <title>Impressionist</title>
 </head>
 
 <body>
-    <canvas width="900" height="600" id="graph"></canvas>
-    <script src="/pather.min.js" type="module"></script>
+    <div
+        style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;background-color: #BFD7ED;">
+        <div style="font-size: 18px; margin-bottom: 18px; width: 696px; color: #002B73;">Impressionist Examples:</div>
+        <canvas width="720" height="580" id="graph" style="border: 1px solid #60A3D9; border-radius: 20px;"></canvas>
+        <div style="font-size: 14px; margin-top: 18px; width: 696px; color: #0073B7;">Give it a try to find out more
+            shapes.
+        </div>
+    </div>
+    <script src="/impressionist.min.js" type="module"></script>
     <script type="module">
-        import { rectangle, polygon, curve, circle } from "./pather.min.js";
+        import { arrow, capsule, circular, common, rectangle, polygon, curve, circle, step } from "./impressionist.min.js";
 
         const canvas = document.getElementById("graph");
         const ctx = canvas.getContext("2d");
 
-        const rect = new Path2D(rectangle.round(300, 300, 200, 100, 20));
-        ctx.stroke(rect);
+        ctx.strokeStyle = "#003B73";
 
-        const circle1 = new Path2D(circle.basic(420, 300, 6));
-        ctx.stroke(circle1);
+        const a1 = new Path2D(arrow.triangle(120, 120, 32, 40));
+        ctx.stroke(a1);
 
-        const arrow = new Path2D(curve.multi([[420, 300], [520, 460], [720, 300]], 200));
-        ctx.stroke(arrow);
+        const a2 = new Path2D(arrow.vee(240, 110, 48, -18, 36));
+        ctx.stroke(a2);
 
-        const circle2 = new Path2D(circle.basic(720, 300, 6));
-        ctx.stroke(circle2);
+        const a3 = new Path2D(arrow.bullet(360, 120, 36, 52));
+        ctx.stroke(a3);
 
-        const polygon = new Path2D(polygon.regular(800, 240, 5, 80));
-        ctx.stroke(polygon);
+        const a4 = new Path2D(arrow.blunt(480, 120, 48, 36, 72));
+        ctx.stroke(a4);
+
+        const a5 = new Path2D(arrow.dome(600, 120, 48, 36));
+        ctx.stroke(a5);
+
+        const c1 = new Path2D(capsule.row(120, 240, 60, 30));
+        ctx.stroke(c1);
+
+        const c2 = new Path2D(circle.basic(240, 240, 24));
+        ctx.stroke(c2);
+
+        const c3 = new Path2D(circular.sector(360, 270, 32, 48, 60, 120));
+        ctx.stroke(c3);
+
+        const c4 = new Path2D(circular.pie(480, 260, 48, 30, 150));
+        ctx.stroke(c4);
+
+        const r1 = new Path2D(rectangle.basic(600, 240, 48, 30));
+        ctx.stroke(r1);
+
+        const c5 = new Path2D(common.plus(120, 360, 48, 16));
+        ctx.stroke(c5);
+
+        const c6 = new Path2D(common.popup(240, 390, 72, 48, 9, 18, 10));
+        ctx.stroke(c6);
+
+        const p1 = new Path2D(polygon.regular(360, 330, 5, 36));
+        ctx.stroke(p1);
+
+        const s1 = new Path2D(step.round(480, 360, [[0, 540], [1, 320], [0, 600]], 10));
+        ctx.stroke(s1);
+
+        const c8 = new Path2D(curve.multi([[120, 480], [180, 430], [240, 500], [360, 450]], 40));
+        ctx.stroke(c8)
+
+        ctx.fillStyle = "#60A3D9";
+        ctx.font = "30px Arial";
+        ctx.fillText("more", 456, 480);
+        const ci1 = new Path2D(circle.basic(540, 472, 5));
+        ctx.fill(ci1);
+        const ci2 = new Path2D(circle.basic(556, 472, 5));
+        ctx.fill(ci2);
+        const ci3 = new Path2D(circle.basic(572, 472, 5));
+        ctx.fill(ci3);
     </script>
 </body>
 

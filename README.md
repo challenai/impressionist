@@ -1,8 +1,12 @@
 # Impressionist
 
 Super easy to use Path Generator for Canvas and SVG.  
-Don't google and try to build the basic shapes with math, it's a sheer waste of time,  
-if you found some other shapes usable, just add it to the lib.
+Don't google and try to build the basic shapes with `sin, cos, exp and %^!??`, it's a sheer waste of time,  
+if you found some other shapes usable, just add it to the library.
+
+All the shapes are generated as a single path string to keep it performant and maintainable.  
+
+![impressionist](docs/screenshot.png)
 
 ### Install
 
