@@ -31,9 +31,9 @@ export function sectorRadians(x: number, y: number, radius0: number, radius1: nu
   const endRY = Math.sin(end);
   return `
     M${x + startRX * radius0} ${y - startRY * radius0}
-    A${radius0} ${radius0} 0 ${larger} ${start > end ? 1 : 0} ${endRX * radius0} ${-endRY * radius0}
-    L${endRX * radius1} ${-endRY * radius1}
-    A${radius1} ${radius1} 0 ${larger} ${start > end ? 0 : 1} ${startRX * radius1} ${-startRY * radius1}
+    A${radius0} ${radius0} 0 ${larger} ${start > end ? 1 : 0} ${x + endRX * radius0} ${y - endRY * radius0}
+    L${x + endRX * radius1} ${y - endRY * radius1}
+    A${radius1} ${radius1} 0 ${larger} ${start > end ? 0 : 1} ${x + startRX * radius1} ${y - startRY * radius1}
     Z
   `;
 }
@@ -96,7 +96,7 @@ export function pieRadians(x: number, y: number, radius: number, start: number, 
   const startY = Math.sin(startRadians) * radius;
   const endX = Math.cos(endRadians) * radius;
   const endY = Math.sin(endRadians) * radius;
-  return `M${x} ${y}L${startX} ${-startY}A${radius} ${radius} 0 ${larger} ${clockwise} ${endX} ${-endY}Z`;
+  return `M${x} ${y}L${x + startX} ${y - startY}A${radius} ${radius} 0 ${larger} ${clockwise} ${x + endX} ${y - endY}Z`;
 }
 
 /**
