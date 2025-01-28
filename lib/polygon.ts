@@ -6,7 +6,7 @@
  * **Example Usage**
  * 
  * ```jsx
- * const polygon = polygon.basic([
+ * const p = polygon.basic([
  *   [40, 20],
  *   [80, 30],
  *   [70, 50],
@@ -37,10 +37,12 @@ export function basic(points: number[][]): string {
  * 
  * @param radius the radius of the polygon
  * 
+ * notice: this shape is not symmetry.
+ * 
  * **Example Usage**
  * 
  * ```jsx
- * const polygon = polygon.regular(800, 240, 5, 80);
+ * const p = polygon.regular(800, 240, 5, 80);
  * ```
  */
 export function regular(x: number, y: number, sides: number, radius: number): string {

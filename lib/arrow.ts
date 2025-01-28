@@ -14,7 +14,7 @@
  * **Example Usage**
  * 
  * ```jsx
- * const arrow = arrow.vee(0, 0, 16, -6, 12);
+ * const a = arrow.vee(0, 0, 16, -6, 12);
  * ```
  */
 export function vee(x: number, y: number, width: number, low: number, high: number): string {
@@ -40,7 +40,7 @@ export function vee(x: number, y: number, width: number, low: number, high: numb
  * **Example Usage**
  * 
  * ```jsx
- * const arrow = arrow.basic(0, 0, 16, 20);
+ * const a = arrow.basic(0, 0, 16, 20);
  * ```
  */
 export function basic(x: number, y: number, width: number, height: number): string {
@@ -66,7 +66,7 @@ export function basic(x: number, y: number, width: number, height: number): stri
  * **Example Usage**
  * 
  * ```jsx
- * const arrow = arrow.triangle(0, 0, 16, 20);
+ * const a = arrow.triangle(0, 0, 16, 20);
  * ```
  */
 export function triangle(x: number, y: number, width: number, height: number): string {

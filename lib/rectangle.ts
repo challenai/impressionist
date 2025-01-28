@@ -34,7 +34,7 @@ export interface Radius4 {
  * **Example Usage**
  * 
  * ```jsx
- * const rectangle = rectangle.basic(300, 300, 200, 100);
+ * const r = rectangle.basic(300, 300, 200, 100);
  * ```
  */
 export function basic(x: number, y: number, width: number, height: number): string {
@@ -63,7 +63,7 @@ export function basic(x: number, y: number, width: number, height: number): stri
  * **Example Usage**
  * 
  * ```jsx
- * const rectangle = rectangle.round(300, 300, 200, 100, 20);
+ * const r = rectangle.round(300, 300, 200, 100, 20);
  * ```
  */
 export function round(
@@ -116,7 +116,7 @@ export function round(
  * **Example Usage**
  * 
  * ```jsx
- * const diamond = rectangle.diamond(300, 300, 200, 100);
+ * const d = rectangle.diamond(300, 300, 200, 100);
  * ```
  */
 export function diamond(x: number, y: number, width: number, height: number): string {
@@ -147,7 +147,7 @@ export function diamond(x: number, y: number, width: number, height: number): st
  * **Example Usage**
  * 
  * ```jsx
- * const parallelogram = rectangle.parallelogram(300, 300, 200, 100, 30);
+ * const p = rectangle.parallelogram(300, 300, 200, 100, 30);
  * ```
  */
 export function parallelogram(x: number, y: number, width: number, height: number, offset: number): string {
@@ -175,7 +175,7 @@ export function parallelogram(x: number, y: number, width: number, height: numbe
  * **Example Usage**
  * 
  * ```jsx
- * const rectangle = rectangle.basicAligned(300, 300, 200, 100);
+ * const r = rectangle.basicAligned(300, 300, 200, 100);
  * ```
  */
 export function basicAligned(
@@ -203,7 +203,7 @@ export function basicAligned(
  * **Example Usage**
  * 
  * ```jsx
- * const rectangle = rectangle.roundAligned(300, 300, 200, 100, 20);
+ * const r = rectangle.roundAligned(300, 300, 200, 100, 20);
  * ```
  */
 export function roundAligned(
@@ -230,7 +230,7 @@ export function roundAligned(
  * **Example Usage**
  * 
  * ```jsx
- * const diamond = rectangle.diamondAlignedTop(300, 300, 200, 100);
+ * const d = rectangle.diamondAlignedTop(300, 300, 200, 100);
  * ```
  */
 export function diamondAlignedTop(
@@ -256,7 +256,7 @@ export function diamondAlignedTop(
  * **Example Usage**
  * 
  * ```jsx
- * const diamond = rectangle.diamondAlignedLeft(300, 300, 200, 100);
+ * const d = rectangle.diamondAlignedLeft(300, 300, 200, 100);
  * ```
  */
 export function diamondAlignedLeft(
@@ -284,7 +284,7 @@ export function diamondAlignedLeft(
  * **Example Usage**
  * 
  * ```jsx
- * const parallelogram = rectangle.parallelogramAligned(300, 300, 200, 100, 30);
+ * const p = rectangle.parallelogramAligned(300, 300, 200, 100, 30);
  * ```
  */
 export function parallelogramAligned(x: number, y: number, width: number, height: number, offset: number): string {

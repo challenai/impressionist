@@ -12,7 +12,7 @@
  * **Example Usage**
  * 
  * ```jsx
- * const capsule = capsule.row(0, 10, 80, 30);
+ * const c = capsule.row(0, 10, 80, 30);
  * ```
  */
 export function row(x: number, y: number, width: number, height: number): string {

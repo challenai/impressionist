@@ -10,7 +10,7 @@
  * **Example Usage**
  * 
  * ```jsx
- * const step = step.basic([
+ * const s = step.basic([
  *   [0, 120],
  *   [1, 80],
  *   [0, 70],
@@ -47,7 +47,7 @@ export function basic(x: number, y: number, points: number[][]): string {
  * **Example Usage**
  * 
  * ```jsx
- * const step = step.round([
+ * const s = step.round([
  *   [0, 120],
  *   [1, 80],
  *   [0, 70],

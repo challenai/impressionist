@@ -16,7 +16,7 @@
  * **Example Usage**
  * 
  * ```jsx
- * const circle = sector(0, 0, 64, 96, Math.PI, 1.5 * Math.PI);
+ * const c = circular.sectorRadians(0, 0, 64, 96, Math.PI, 1.5 * Math.PI);
  * ```
  */
 export function sectorRadians(x: number, y: number, radius0: number, radius1: number, start: number, end: number): string {
@@ -56,7 +56,7 @@ export function sectorRadians(x: number, y: number, radius0: number, radius1: nu
  * **Example Usage**
  * 
  * ```jsx
- * const circle = sector(0, 0, 64, 96, 60, 120);
+ * const c = circular.sector(0, 0, 64, 96, 60, 120);
  * ```
  */
 export function sector(x: number, y: number, radius0: number, radius1: number, start: number, end: number): string {
@@ -80,7 +80,7 @@ export function sector(x: number, y: number, radius0: number, radius1: number, s
  * **Example Usage**
  * 
  * ```jsx
- * const circle = pie(0, 0, 72, 0.15 * Math.Pi, 0.5 * Math.PI);
+ * const c = circular.pie(0, 0, 72, 0.15 * Math.Pi, 0.5 * Math.PI);
  * ```
  */
 export function pieRadians(x: number, y: number, radius: number, start: number, end: number): string {
@@ -115,7 +115,7 @@ export function pieRadians(x: number, y: number, radius: number, start: number, 
  * **Example Usage**
  * 
  * ```jsx
- * const circle = pie(0, 0, 72, 30, 60);
+ * const c = circular.pie(0, 0, 72, 30, 60);
  * ```
  */
 export function pie(x: number, y: number, radius: number, start: number, end: number): string {

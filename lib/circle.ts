@@ -10,7 +10,7 @@
  * **Example Usage**
  * 
  * ```jsx
- * const circle = circle.basic(20, 10, 30);
+ * const c = circle.basic(20, 10, 30);
  * ```
  */
 export function basic(x: number, y: number, radius: number): string {
@@ -35,7 +35,7 @@ export function basic(x: number, y: number, radius: number): string {
  * **Example Usage**
  * 
  * ```jsx
- * const circle = circle.basicAlignedLeft(20, 10, 30);
+ * const c = circle.basicAlignedLeft(20, 10, 30);
  * ```
  */
 export function basicAlignedLeft(x: number, y: number, radius: number): string {
@@ -56,7 +56,7 @@ export function basicAlignedLeft(x: number, y: number, radius: number): string {
  * **Example Usage**
  * 
  * ```jsx
- * const circle = circle.basicAlignedTop(20, 10, 30);
+ * const c = circle.basicAlignedTop(20, 10, 30);
  * ```
  */
 export function basicAlignedTop(x: number, y: number, radius: number): string {

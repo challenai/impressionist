@@ -12,7 +12,7 @@
  * **Example Usage**
  * 
  * ```jsx
- * const line = line.basic(20, 10, 30, 50);
+ * const l = line.basic(20, 10, 30, 50);
  * ```
  */
 export function basic(x: number, y: number, x1: number, y1: number): string {
@@ -27,7 +27,7 @@ export function basic(x: number, y: number, x1: number, y1: number): string {
  * **Example Usage**
  * 
  * ```jsx
- * const curve = line.fold([
+ * const c = line.fold([
  *   [120, 30],
  *   [80, 100],
  *   [70, 180],

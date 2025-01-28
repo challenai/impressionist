@@ -10,7 +10,7 @@
  * **Example Usage**
  * 
  * ```jsx
- * const triangle = triangle.equilateral(20, 10, 30);
+ * const t = triangle.equilateral(20, 10, 30);
  * ```
  */
 export function equilateral(x: number, y: number, length: number): string {
@@ -38,7 +38,7 @@ export function equilateral(x: number, y: number, length: number): string {
  * **Example Usage**
  * 
  * ```jsx
- * const triangle = triangle.isosceles(20, 10, 30, 16);
+ * const t = triangle.isosceles(20, 10, 30, 16);
  * ```
  */
 export function isosceles(x: number, y: number, bottom: number, height: number): string {
@@ -63,7 +63,7 @@ export function isosceles(x: number, y: number, bottom: number, height: number):
  * **Example Usage**
  * 
  * ```jsx
- * const triangle = triangle.equilateralAlignedLeft(20, 10, 30);
+ * const t = triangle.equilateralAlignedLeft(20, 10, 30);
  * ```
  */
 export function equilateralAlignedLeft(x: number, y: number, length: number): string {
@@ -89,7 +89,7 @@ export function equilateralAlignedLeft(x: number, y: number, length: number): st
  * **Example Usage**
  * 
  * ```jsx
- * const triangle = triangle.equilateralAlignedTop(20, 10, 30);
+ * const t = triangle.equilateralAlignedTop(20, 10, 30);
  * ```
  */
 export function equilateralAlignedTop(x: number, y: number, length: number): string {
@@ -115,7 +115,7 @@ export function equilateralAlignedTop(x: number, y: number, length: number): str
  * **Example Usage**
  * 
  * ```jsx
- * const triangle = triangle.equilateralAlignedRight(20, 10, 30);
+ * const t = triangle.equilateralAlignedRight(20, 10, 30);
  * ```
  */
 export function equilateralAlignedRight(x: number, y: number, length: number): string {
@@ -143,7 +143,7 @@ export function equilateralAlignedRight(x: number, y: number, length: number): s
  * **Example Usage**
  * 
  * ```jsx
- * const triangle = triangle.isoscelesAlignedLeft(20, 10, 30, 16);
+ * const t = triangle.isoscelesAlignedLeft(20, 10, 30, 16);
  * ```
  */
 export function isoscelesAlignedLeft(x: number, y: number, bottom: number, height: number): string {
@@ -170,7 +170,7 @@ export function isoscelesAlignedLeft(x: number, y: number, bottom: number, heigh
  * **Example Usage**
  * 
  * ```jsx
- * const triangle = triangle.isoscelesAlignedTop(20, 10, 30, 16);
+ * const t = triangle.isoscelesAlignedTop(20, 10, 30, 16);
  * ```
  */
 export function isoscelesAlignedTop(x: number, y: number, bottom: number, height: number): string {
@@ -197,7 +197,7 @@ export function isoscelesAlignedTop(x: number, y: number, bottom: number, height
  * **Example Usage**
  * 
  * ```jsx
- * const triangle = triangle.isoscelesAlignedTop(20, 10, 30, 16);
+ * const t = triangle.isoscelesAlignedTop(20, 10, 30, 16);
  * ```
  */
 export function isoscelesAlignedRight(x: number, y: number, bottom: number, height: number): string {
