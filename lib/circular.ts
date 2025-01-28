@@ -30,7 +30,7 @@ export function sectorRadians(x: number, y: number, radius0: number, radius1: nu
   const endRX = Math.cos(end);
   const endRY = Math.sin(end);
   return `
-    M${startRX * radius0} ${-startRY * radius0}
+    M${x + startRX * radius0} ${y - startRY * radius0}
     A${radius0} ${radius0} 0 ${larger} ${start > end ? 1 : 0} ${endRX * radius0} ${-endRY * radius0}
     L${endRX * radius1} ${-endRY * radius1}
     A${radius1} ${radius1} 0 ${larger} ${start > end ? 0 : 1} ${startRX * radius1} ${-startRY * radius1}
