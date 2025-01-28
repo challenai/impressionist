@@ -1,5 +1,5 @@
 {
-  "name": "@pattaya/pather",
+  "name": "impressionist",
   "module": "lib/index.js",
   "version": "1.0.1",
   "description": "light weight path generation library for canvas and svg",
@@ -11,7 +11,7 @@
     "canvas",
     "svg",
     "path",
-    "pather"
+    "generate"
   ],
   "author": "Challen Ai <fengyiai@gmail.com>",
   "license": "MIT",
@@ -21,7 +21,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/challenai/pather.git"
+    "url": "git+https://github.com/challenai/impressionist.git"
   },
   "scripts": {
     "build": "tsc && esbuild dist/*.js --bundle --minify --target=chrome58,firefox57,safari11,edge16 --format=esm --outdir=dist/lib/ --out-extension:.js=.min.js",
