@@ -1,4 +1,4 @@
-# Pather
+# Impressionist
 
 Super easy to use Path Generator for Canvas and SVG.  
 Don't google and try to build the basic shapes with math, it's a sheer waste of time,  
@@ -6,11 +6,11 @@ if you found some other shapes usable, just add it to the lib.
 
 ### Install
 
-`npm install @pattaya/pather --save`
+`npm install impressionist --save`
 
 ### Usage
 
-import the circle, rectangle from pather library,  
+import the circle, rectangle from impressionist library,  
 and stroke it!
 You can use it in React, Vue, or just vanilla js.
 
@@ -34,7 +34,7 @@ You can double click the `index.html` in `/exmaples` directory to run the exampl
 
 ```javascript
 // import shapes
-import { rectangle, polygon, curve, circle } from "@pattaya/pather";
+import { rectangle, polygon, curve, circle } from "impressionist";
 
 const canvas = document.getElementById("graph");
 const ctx = canvas.getContext("2d");
