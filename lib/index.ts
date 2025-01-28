@@ -1,8 +1,8 @@
-export { Capsule } from "./capsule";
-export { Circle } from "./circle";
-export { Curve } from "./curve";
-export { Line } from "./line";
-export { Polygon } from "./polygon";
-export { Rectangle, type Radius4 } from "./rectangle";
-export { Step } from "./step";
-export { Triangle } from "./triangle";
+export * as capsule from "./capsule";
+export * as circle from "./circle";
+export * as curve from "./curve";
+export * as line from "./line";
+export * as polygon from "./polygon";
+export * as rectangle from "./rectangle";
+export * as step from "./step";
+export * as triangle from "./triangle";
