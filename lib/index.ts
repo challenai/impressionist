@@ -6,3 +6,6 @@ export * as polygon from "./polygon";
 export * as rectangle from "./rectangle";
 export * as step from "./step";
 export * as triangle from "./triangle";
+export * as common from "./common";
+export * as circular from "./circular";
+export * as arrow from "./arrow";
