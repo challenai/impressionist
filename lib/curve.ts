@@ -16,7 +16,7 @@
  * **Example Usage**
  * 
  * ```jsx
- * const curve = Curve.Basic(20, 10, 30, 50, 25, 50);
+ * const curve = curve.basic(20, 10, 30, 50, 25, 50);
  * ```
  */
 export function basic(
@@ -40,7 +40,7 @@ export function basic(
  * **Example Usage**
  * 
  * ```jsx
- * const curve = Curve.Multi([
+ * const curve = curve.multi([
  *   [420, 300],
  *   [520, 460],
  *   [720, 300],

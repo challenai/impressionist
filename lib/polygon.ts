@@ -6,7 +6,7 @@
  * **Example Usage**
  * 
  * ```jsx
- * const polygon = Polygon.Basic([
+ * const polygon = polygon.basic([
  *   [40, 20],
  *   [80, 30],
  *   [70, 50],
@@ -40,7 +40,7 @@ export function basic(points: number[][]): string {
  * **Example Usage**
  * 
  * ```jsx
- * const polygon = Polygon.Regular(800, 240, 5, 80);
+ * const polygon = polygon.regular(800, 240, 5, 80);
  * ```
  */
 export function regular(x: number, y: number, sides: number, radius: number): string {
