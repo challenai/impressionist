@@ -1,7 +1,7 @@
 {
   "name": "impressionist",
-  "module": "lib/index.js",
-  "version": "1.0.2",
+  "module": "lib/index.min.js",
+  "version": "1.0.5",
   "description": "light weight path generation library for canvas and svg",
   "type": "module",
   "typings": "types/index.d.ts",
