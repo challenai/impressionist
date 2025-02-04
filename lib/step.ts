@@ -5,29 +5,67 @@
  * 
  * @param y the start point y of the step line
  * 
- * @param points the points' array of the step line, 0: x axis, 1: y axis
+ * @param pathes the points' array of the step line, start from x axis
+ * 
+ * @param radius the round radius of the step line
  * 
  * **Example Usage**
  * 
  * ```jsx
- * const s = step.basic([
- *   [0, 120],
- *   [1, 80],
- *   [0, 70],
- * ]);
+ * const s = step.basic([120, 30, -60]);
  * ```
  */
-export function basic(x: number, y: number, points: number[][]): string {
-  if (!points) return "";
+export function basic(x: number, y: number, pathes: number[], radius?: number): string {
+  if (!pathes || pathes.length <= 2) return relative(x, y, pathes);
 
-  let path = `M${x} ${y}`;
-  for (const point of points) {
-    if (point[0] === 0) {
-      x = point[1];
+  const pathes_: number[] = [];
+  let h = pathes[0];
+  let v = pathes[1];
+  let horizontal = true;
+  for (let i = 2; i < pathes.length; i++) {
+    if (horizontal) {
+      pathes_.push(pathes[i] - h);
+      h = pathes[i];
     } else {
-      y = point[1];
+      pathes_.push(pathes[i] - v);
+      v = pathes[i];
     }
-    path += ` L${x} ${y}`;
+    horizontal = !horizontal;
+  }
+  return relative(x, y, pathes_, radius);
+}
+
+
+/**
+ * draw a baisc step line (relative path)
+ * 
+ * @param x the start point x of the step line
+ * 
+ * @param y the start point y of the step line
+ * 
+ * @param pathes the pathes' array of the step line, start from x axis
+ * 
+ * @param radius the round radius of the step line
+ * 
+ * **Example Usage**
+ * 
+ * ```jsx
+ * const s = step.basic([120, 30, -60]);
+ * ```
+ */
+export function relative(x: number, y: number, pathes: number[], radius?: number): string {
+  if (!pathes) return "";
+  if (radius) return _round(x, y, pathes, radius);
+
+  let horizontal = true;
+  let path = `M${x} ${y}`;
+  for (const p of pathes) {
+    if (horizontal) {
+      path += `l${p} 0`;
+    } else {
+      path += `l0 ${p}`;
+    }
+    horizontal = !horizontal;
   }
 
   return path;
@@ -40,9 +78,9 @@ export function basic(x: number, y: number, points: number[][]): string {
  * 
  * @param y the start point y of the step line
  * 
- * @param points the points' array of the step line, 0: x axis, 1: y axis
+ * @param pathes the pathes' array of the step line, 0: x axis, 1: y axis
  * 
- * @param radius the radius of the step line
+ * @param radius the round radius of the step line
  * 
  * **Example Usage**
  * 
@@ -54,49 +92,39 @@ export function basic(x: number, y: number, points: number[][]): string {
  * ], 20);
  * ```
  */
-export function round(
+export function _round(
   x: number,
   y: number,
-  points: number[][],
+  pathes: number[],
   radius: number
 ): string {
-  if (!points) return "";
-  const sz = points.length;
+  if (!pathes || pathes.length < 2) return "";
+  let horizontal = true;
+
+  let nextPath = pathes[0];
   let path = `M${x} ${y}`;
-  let needRotate = false;
-  let nx = 0,
-    ny = 0;
-  let clockwise = false;
-  for (let i = 0; i < sz - 1; i++) {
-    needRotate = points[i][0] !== points[i + 1][0];
-    if (!needRotate) {
-      if (points[i][0] === 0) x = points[i][1];
-      if (points[i][0] === 1) y = points[i][1];
-      path += ` L${x} ${y}`;
-      continue;
+  for (let i = 0; i < pathes.length - 1; i++) {
+    const r = Math.min(Math.abs(pathes[i]) / 2, Math.abs(pathes[i + 1]) / 2, radius);
+    const d = pathes[i] > 0 === pathes[i + 1] > 0;
+    if (horizontal) {
+      const dx = pathes[i] > 0 ? r : -r;
+      const dy = pathes[i + 1] > 0 ? r : -r;
+      path += `l${nextPath - dx} 0a${r} ${r} 0 0 ${d ? 1 : 0} ${dx} ${dy}`;
+      nextPath = pathes[i + 1] - dy;
+    } else {
+      const dx = pathes[i + 1] > 0 ? r : -r;
+      const dy = pathes[i] > 0 ? r : -r;
+      path += `l0 ${nextPath - dy}a${r} ${r} 0 0 ${d ? 0 : 1} ${dx} ${dy}`;
+      nextPath = pathes[i + 1] - dx;
     }
-    if (points[i][0] === 0) {
-      x = points[i][1] > x ? points[i][1] - radius : points[i][1] + radius;
-      nx = points[i][1];
-      ny = points[i + 1][1] > y ? y + radius : y - radius;
-      clockwise = points[i][1] > x === points[i + 1][1] > y;
-    }
-    if (points[i][0] === 1) {
-      y = points[i][1] > y ? points[i][1] - radius : points[i][1] + radius;
-      ny = points[i][1];
-      nx = points[i + 1][1] > x ? x + radius : x - radius;
-      clockwise = points[i][1] > y !== points[i + 1][1] > x;
-    }
-    path += ` L${x} ${y} A${radius} ${radius} 0 0 ${clockwise ? 1 : 0
-      } ${nx} ${ny}`;
-    x = nx;
-    y = ny;
+    horizontal = !horizontal;
   }
 
-  if (points[sz - 1][0] === 0) x = points[sz - 1][1];
-  if (points[sz - 1][0] === 1) y = points[sz - 1][1];
-
-  path += ` L${x} ${y}`;
+  if (horizontal) {
+    path += `l${pathes[pathes.length - 1]} 0`;
+  } else {
+    path += `l0 ${pathes[pathes.length - 1]}`;
+  }
 
   return path;
 }
