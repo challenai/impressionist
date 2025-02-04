@@ -1,12 +1,52 @@
 # Impressionist
 
-Super easy to use Path Generator for Canvas and SVG.  
-Don't google and try to build the basic shapes with `sin, cos, exp and %^!??`, it's a sheer waste of time,  
-if you found some other shapes usable, just add it to the library.
+Impressionist is a **Path Generator** for **Canvas and SVG**.  
 
-All the shapes are generated as a single path string to keep it performant and maintainable.  
+Don't need to google and try to build the basic shapes with mathmatics `sin, cos, exp and %^!??`, it's a sheer waste of time.
+
+All the shapes are generated as **a single path string** to keep it performant and maintainable.  
 
 ![impressionist](docs/screenshot.png)
+
+### supported pathes
+
+- circle
+  - basic circle, aligned or symmetrical
+- circular
+  - sector, radians or degrees
+  - pie, radians or degrees
+- line
+  - simple two points line
+  - fold line
+- step
+  - step line, with round corner, relative or absolute
+- polygon
+  - self-customed polygon
+  - regular polygon
+- rectangle
+  - basic rectangle, with round corner, alinged or symmetrical
+  - diamond, alinged or symmetrical
+  - parallelogram, alinged or symmetrical
+- triangle
+  - equilateral, alinged or symmetrical
+  - isosceles, alinged or symmetrical
+- capsule
+  - row
+- bezier curve
+  - simple quadratic bezier curve
+  - simple cubic bezier curve
+  - continuous quadratic bezier curve
+  - continuous cubic bezier curve
+- arrow
+  - basic arrow
+  - vee arrow
+  - triangle arrow
+  - blunt arrow
+  - dome arrow
+  - bullet arrow
+- common shapes
+  - plus
+  - popup
 
 ### Install
 
