@@ -18,7 +18,7 @@
     </div>
     <script src="/impressionist.min.js" type="module"></script>
     <script type="module">
-        import { arrow, capsule, circular, common, rectangle, polygon, curve, circle, step } from "./impressionist.min.js";
+        import { arrow, capsule, circular, common, rectangle, polygon, bezier, circle, step } from "./impressionist.min.js";
 
         const canvas = document.getElementById("graph");
         const ctx = canvas.getContext("2d");
@@ -64,10 +64,10 @@
         const p1 = new Path2D(polygon.regular(360, 330, 5, 36));
         ctx.stroke(p1);
 
-        const s1 = new Path2D(step.round(480, 360, [[0, 540], [1, 320], [0, 600]], 10));
+        const s1 = new Path2D(step.relative(480, 340, [60, 50, 70], 10));
         ctx.stroke(s1);
 
-        const c8 = new Path2D(curve.multi([[120, 480], [180, 430], [240, 500], [360, 450]], 40));
+        const c8 = new Path2D(bezier.quadratic([{ x: 90, y: 480 }, { x: 180, y: 430 }, { x: 240, y: 500 }, { x: 360, y: 450 }]));
         ctx.stroke(c8)
 
         ctx.fillStyle = "#60A3D9";

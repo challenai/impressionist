@@ -74,7 +74,8 @@ const t1 = triangle.equilateral(x, y, length);
 
 ### Quick Start
 
-You can double click the `index.html` in `/exmaples` directory to run the example.    
+You can double click the `index.html` in `/exmaples` directory to run the example if your browser allow you to run local HTML files.    
+Or run `python3 -m http.server` to avoid CQRS or other permission problems.
 
 ```javascript
 // import shapes
