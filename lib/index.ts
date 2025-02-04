@@ -1,8 +1,8 @@
 export * as arrow from "./arrow";
+export * as bezier from "./bezier";
 export * as capsule from "./capsule";
 export * as circle from "./circle";
 export * as circular from "./circular";
-export * as curve from "./curve";
 export * as common from "./common";
 export * as line from "./line";
 export * as polygon from "./polygon";
