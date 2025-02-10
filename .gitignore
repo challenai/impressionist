@@ -173,5 +173,7 @@ dist
 
 # Finder (MacOS) folder config
 .DS_Store
-*.lockb
-types
+.vscode
+pnpm-lock.yaml
+bun.lockb
+deno.lock
