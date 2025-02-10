@@ -23,7 +23,7 @@ export function vee(x: number, y: number, width: number, low: number, high: numb
   }
 
   const r = width / 2;
-  return `M${x} ${y}l${-r} ${-low}l${r} ${low - high}l${r} ${high - low}Z`;
+  return `M${x} ${y + high - low}l${-r} ${-low}l${r} ${high}l${r} ${-high}Z`;
 }
 
 /**
@@ -75,7 +75,7 @@ export function triangle(x: number, y: number, width: number, height: number): s
   }
 
   const r = width / 2;
-  return `M${x - r} ${y}l${width} 0l${-r} ${-height}Z`;
+  return `M${x - r} ${y + height}l${width} 0l${-r} ${-height}Z`;
 }
 
 /**
@@ -103,7 +103,7 @@ export function blunt(x: number, y: number, width: number, low: number, high: nu
   }
 
   const r = width / 2;
-  return `M${x - r} ${y}l0 ${-low}l${r} ${low - high}l${r} ${high - low}l0 ${low}Z`;
+  return `M${x - r} ${y + high}l0 ${-low}l${r} ${low - high}l${r} ${high - low}l0 ${low}Z`;
 }
 
 /**
@@ -129,7 +129,7 @@ export function dome(x: number, y: number, width: number, low: number): string {
   }
 
   const r = width / 2;
-  return `M${x - r} ${y}l0 ${-low}a${r} ${r} 0 0 1 ${width} 0l0 ${low}Z`;
+  return `M${x - r} ${y + r + low}l0 ${-low}a${r} ${r} 0 0 1 ${width} 0l0 ${low}Z`;
 }
 
 /**
@@ -155,5 +155,5 @@ export function bullet(x: number, y: number, width: number, height: number): str
   }
 
   const r = width / 2;
-  return `M${x - r} ${y}a${r} ${height} 0 0 1 ${width} 0Z`;
+  return `M${x - r} ${y + height}a${r} ${height} 0 0 1 ${width} 0Z`;
 }
