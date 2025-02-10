@@ -23,7 +23,7 @@ export function vee(x: number, y: number, width: number, low: number, high: numb
   }
 
   const r = width / 2;
-  return `M${x} ${y + high - low}l${-r} ${-low}l${r} ${high}l${r} ${-high}Z`;
+  return `M${x} ${y + high}l${-r} ${-low}l${r} ${low - high}l${r} ${high - low}Z`;
 }
 
 /**
