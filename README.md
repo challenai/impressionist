@@ -1,102 +1,102 @@
-# Impressionist
+# Impressionist  
 
 Impressionist is a **Path Generator** for **Canvas and SVG**.  
 
-Don't need to google and try to build the basic shapes with mathmatics `sin, cos, exp and %^!??`, it's a sheer waste of time.
+No more struggling with trigonometric functions like `sin`, `cos`, or `exp` to draw basic shapes. Impressionist saves you time by providing a simple API to generate **single path strings**, ensuring optimal performance and maintainability.  
 
-All the shapes are generated as **a single path string** to keep it performant and maintainable.  
+![Impressionist](docs/screenshot.png)  
 
-![impressionist](docs/screenshot.png)
+## Supported Paths  
 
-### supported pathes
+Impressionist provides a variety of path generators:  
 
-- circle
-  - basic circle, aligned or symmetrical
-- circular
-  - sector, radians or degrees
-  - pie, radians or degrees
-- line
-  - simple two points line
-  - fold line
-- step
-  - step line, with round corner, relative or absolute
-- polygon
-  - self-customed polygon
-  - regular polygon
-- rectangle
-  - basic rectangle, with round corner, alinged or symmetrical
-  - diamond, alinged or symmetrical
-  - parallelogram, alinged or symmetrical
-- triangle
-  - equilateral, alinged or symmetrical
-  - isosceles, alinged or symmetrical
-- capsule
-  - row
-- bezier curve
-  - simple quadratic bezier curve
-  - simple cubic bezier curve
-  - continuous quadratic bezier curve
-  - continuous cubic bezier curve
-- arrow
-  - basic arrow
-  - vee arrow
-  - triangle arrow
-  - blunt arrow
-  - dome arrow
-  - bullet arrow
-- common shapes
-  - plus
-  - popup
+### Basic Shapes  
+- **Circle**  
+  - Basic, aligned, or symmetrical  
+- **Ellipse** *(if applicable)*  
+- **Line**  
+  - Simple two-point line  
+  - Folded line  
 
-### Install
+### Advanced Shapes  
+- **Steps**  
+  - Step line (with rounded corners, relative or absolute)  
+- **Polygon**  
+  - Custom polygons  
+  - Regular polygons  
+- **Rectangle**  
+  - Basic rectangle (with optional rounded corners)  
+  - Diamond (aligned or symmetrical)  
+  - Parallelogram (aligned or symmetrical)  
+- **Triangle**  
+  - Equilateral (aligned or symmetrical)  
+  - Isosceles (aligned or symmetrical)  
+- **Capsule** *(If more details are needed, clarify usage)*  
+- **Bezier Curve**  
+  - Quadratic  
+  - Cubic  
+  - Continuous quadratic  
+  - Continuous cubic  
+- **Arrows**  
+  - Basic, Vee, Triangle, Blunt, Dome, Bullet  
+- **Common Shapes**  
+  - Plus sign  
+  - Popup  
 
-`npm install impressionist --save`
+## Installation  
+
+Install via npm:  
+```sh
+npm install impressionist --save
+```
 
 ### Usage
 
-import the circle, rectangle from impressionist library,  
-and stroke it!
-You can use it in React, Vue, or just vanilla js.
+You can use Impressionist in React, Vue, or vanilla JavaScript:
 
 ```javascript
-// draw rectangle at position (x, y)
+// Draw a basic rectangle
 const r1 = rectangle.basic(x, y, width, height);
 
-// draw rounded rectangle at position (x, y)
+// Draw a rounded rectangle
 const r2 = rectangle.round(x, y, width, height, radius);
 
-// draw regular polygon, with given sides and size
+// Draw a regular polygon with a given number of sides
 const p1 = polygon.regular(x, y, sides, size);
 
-// draw triangle, with given side length
+// Draw an equilateral triangle
 const t1 = triangle.equilateral(x, y, length);
 ```
 
 ### Quick Start
 
-You can double click the `index.html` in `/exmaples` directory to run the example if your browser allow you to run local HTML files.    
-Or run `python3 -m http.server` to avoid CQRS or other permission problems.
+To quickly test Impressionist:
+
+1. Open `index.html` in the `/examples` directory (if your browser allows running local HTML files).
+2. Alternatively, start a local server to bypass permission issues:
+  ```bash
+  python3 -m http.server
+  ```
 
 ```javascript
-// import shapes
 import { rectangle, polygon, curve, circle } from "impressionist";
 
 const canvas = document.getElementById("graph");
 const ctx = canvas.getContext("2d");
 
-// create rectangle, with x, y, width, height, and round coner
+// Create and draw a rounded rectangle
 const rect = new Path2D(rectangle.round(300, 300, 200, 100, 20));
 ctx.stroke(rect);
 
-// create circle, with x, y, radius
+// Create and draw a circle
 const circle1 = new Path2D(circle.basic(420, 300, 6));
 ctx.stroke(circle1);
 
-// create rectangle, with x, y, width, height
-// the rectangle is aligned with top-left, which is convinient to build UI.
-const rect = new Path2D(rectangle.basicAligned(900, 500, 200, 100));
+// Create and draw a regular polygon
+const polygon1 = new Path2D(polygon.regular(800, 240, 5, 80));
+ctx.stroke(polygon1);
 
-// create curve, with points and curve ratio
+// Create and draw a smooth curve
 const cur = new Path2D(
   curve.multi(
     [
@@ -108,16 +108,8 @@ const cur = new Path2D(
   )
 );
 ctx.stroke(cur);
-
-// create circle, with x, y, radius
-const circle2 = new Path2D(circle.basic(720, 300, 6));
-ctx.stroke(circle2);
-
-// create regular polygon, with 5 sides and size
-const polygon1 = new Path2D(polygon.regular(800, 240, 5, 80));
-ctx.stroke(polygon1);
 ```
 
 ### License
 
-MIT
+This project is licensed under the **MIT License**.
