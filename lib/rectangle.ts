@@ -89,7 +89,7 @@ export function round(
   radius.br = Math.min(radius.br, maxLen);
 
   return `
-    M${x - (width - radius.tl - radius.tr) / 2} ${y - height / 2}
+    M${x - width / 2 + radius.tl} ${y - height / 2}
     l${width - radius.tr - radius.tl} 0
     a${radius.tr} ${radius.tr} 0 0 1 ${radius.tr} ${radius.tr}
     l0 ${height - radius.tr - radius.br}
