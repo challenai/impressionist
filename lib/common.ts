@@ -1,39 +1,52 @@
 /**
  * draw a plus shape
- * 
+ *
  * @param x the position x of the plus shape
- * 
+ *
  * @param y the position y of the plus shape
- * 
+ *
  * @param size the size of the plus shape
- * 
+ *
  * @param thickness the thickness of the plus shape
- * 
+ *
  * **Example Usage**
- * 
+ *
  * ```jsx
  * const p = common.plus(0, 0, 48, 16);
  * ```
  */
-export function plus(x: number, y: number, size: number, thickness: number): string {
-  if (thickness <= 0 || size <= thickness) {
-    return "";
-  }
+export function plus(
+	x: number,
+	y: number,
+	size: number,
+	thickness: number,
+): string {
+	if (thickness <= 0 || size <= thickness) {
+		return "";
+	}
 
-  const mw = thickness / 2;
-  const ew = size / 2;
-  const delta = ew - mw;
+	const mw = thickness / 2;
+	const ew = size / 2;
+	const delta = ew - mw;
 
-  return `M${x - ew} ${y - mw}l${delta} 0l0 ${-delta}l${thickness} 0l0 ${delta}l${delta} 0l0 ${thickness}l${-delta} 0l0 ${delta}l${-thickness} 0l0 ${-delta}l${-delta} 0Z`;
+	return `M${x - ew} ${y - mw}l${delta} 0l0 ${-delta}l${thickness} 0l0 ${delta}l${delta} 0l0 ${thickness}l${-delta} 0l0 ${delta}l${-thickness} 0l0 ${-delta}l${-delta} 0Z`;
 }
 
-function popupRound(x: number, y: number, width: number, height: number, triangleWidth: number, triangleHeight: number, radius: number): string {
-  if (width <= 0 || height <= 0 || triangleWidth >= width) {
-    return "";
-  }
+function popupRound(
+	x: number,
+	y: number,
+	width: number,
+	height: number,
+	triangleWidth: number,
+	triangleHeight: number,
+	radius: number,
+): string {
+	if (width <= 0 || height <= 0 || triangleWidth >= width) {
+		return "";
+	}
 
-  const twr = triangleWidth / 2;
-  return `
+	const twr = triangleWidth / 2;
+	return `
     M${x - width / 2 + radius} ${y - triangleHeight - height}
     l${width - radius - radius} 0
     a${radius} ${radius} 0 0 1 ${radius} ${radius}
@@ -51,36 +64,52 @@ function popupRound(x: number, y: number, width: number, height: number, triangl
 
 /**
  * draw a popup
- * 
+ *
  * the center of the popup is aligned with bottom of triangle.
- * 
+ *
  * @param x the position x of the popup
- * 
+ *
  * @param y the position y of the popup
- * 
+ *
  * @param width the width of the popup
- * 
+ *
  * @param height the height of the popup
- * 
+ *
  * @param triangleWidth the bottom triangle width of the popup
- * 
+ *
  * @param triangleHeight the bottom triangle height of the popup
- * 
+ *
  * @param radius the radius of the popup
- * 
+ *
  * **Example Usage**
- * 
+ *
  * ```jsx
  * const p = common.popup(0, 0, 120, 75, 9, 18, 10);
  * ```
  */
-export function popup(x: number, y: number, width: number, height: number, triangleWidth: number, triangleHeight: number, radius?: number): string {
-  if (radius) {
-    return popupRound(x, y, width, height, triangleWidth, triangleHeight, radius);
-  }
+export function popup(
+	x: number,
+	y: number,
+	width: number,
+	height: number,
+	triangleWidth: number,
+	triangleHeight: number,
+	radius?: number,
+): string {
+	if (radius) {
+		return popupRound(
+			x,
+			y,
+			width,
+			height,
+			triangleWidth,
+			triangleHeight,
+			radius,
+		);
+	}
 
-  const twr = triangleWidth / 2;
-  return `
+	const twr = triangleWidth / 2;
+	return `
     M${x - width / 2} ${y - triangleHeight - height}
     l${width} 0
     l0 ${height}
@@ -88,35 +117,51 @@ export function popup(x: number, y: number, width: number, height: number, trian
     l${-twr} ${triangleHeight}
     l${-twr} ${-triangleHeight}
     l${twr - width / 2} 0
-    l0 ${- height}
+    l0 ${-height}
   `;
 }
 
 /**
  * draw an aligned popup
- * 
+ *
  * the center of the popup is aligned with top left.
- * 
+ *
  * @param x the position x of the popup
- * 
+ *
  * @param y the position y of the popup
- * 
+ *
  * @param width the width of the popup
- * 
+ *
  * @param height the height of the popup
- * 
+ *
  * @param triangleWidth the bottom triangle width of the popup
- * 
+ *
  * @param triangleHeight the bottom triangle height of the popup
- * 
+ *
  * @param radius the radius of the popup
- * 
+ *
  * **Example Usage**
- * 
+ *
  * ```jsx
  * const p = common.popup(0, 0, 120, 75, 9, 18, 10);
  * ```
  */
-export function popupAligned(x: number, y: number, width: number, height: number, triangleWidth: number, triangleHeight: number, radius?: number): string {
-  return popup(x + width / 2, y + triangleHeight + height, width, height, triangleWidth, triangleHeight, radius);
+export function popupAligned(
+	x: number,
+	y: number,
+	width: number,
+	height: number,
+	triangleWidth: number,
+	triangleHeight: number,
+	radius?: number,
+): string {
+	return popup(
+		x + width / 2,
+		y + triangleHeight + height,
+		width,
+		height,
+		triangleWidth,
+		triangleHeight,
+		radius,
+	);
 }
