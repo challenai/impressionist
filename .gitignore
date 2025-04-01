@@ -177,3 +177,4 @@ dist
 pnpm-lock.yaml
 bun.lockb
 deno.lock
+package-lock.json
