@@ -22,22 +22,27 @@ export interface Radius4 {
 
 /**
  * draw a basic rectangle
- * 
+ *
  * @param x the position x of the rectangle
- * 
+ *
  * @param y the position y of the rectangle
- * 
+ *
  * @param width the width of the rectangle
- * 
+ *
  * @param height the height of the rectangle
- * 
+ *
  * **Example Usage**
- * 
+ *
  * ```jsx
  * const r = rectangle.basic(300, 300, 200, 100);
  * ```
  */
-export function basic(x: number, y: number, width: number, height: number): string {
+export function basic(
+  x: number,
+  y: number,
+  width: number,
+  height: number,
+): string {
   return `
       M${x - width / 2} ${y - height / 2}
       l${width} 0
@@ -49,19 +54,19 @@ export function basic(x: number, y: number, width: number, height: number): stri
 
 /**
  * draw a round rectangle
- * 
+ *
  * @param x the position x of the rectangle
- * 
+ *
  * @param y the position y of the rectangle
- * 
+ *
  * @param width the width of the rectangle
- * 
+ *
  * @param height the height of the rectangle
- * 
+ *
  * @param radius the radius of the rectangle
- * 
+ *
  * **Example Usage**
- * 
+ *
  * ```jsx
  * const r = rectangle.round(300, 300, 200, 100, 20);
  * ```
@@ -71,9 +76,10 @@ export function round(
   y: number,
   width: number,
   height: number,
-  radius: number | Radius4
+  radius: number | Radius4,
 ): string {
   if (typeof radius === "number") {
+    // biome-ignore lint/style/noParameterAssign: off
     radius = { tl: radius, tr: radius, br: radius, bl: radius };
   }
   const maxLen = Math.min(width, height) / 2;
@@ -104,22 +110,27 @@ export function round(
 
 /**
  * draw a diamond shape
- * 
+ *
  * @param x the position x of the diamond
- * 
+ *
  * @param y the position y of the diamond
- * 
+ *
  * @param width the width of the diamond
- * 
+ *
  * @param height the height of the diamond
- * 
+ *
  * **Example Usage**
- * 
+ *
  * ```jsx
  * const d = rectangle.diamond(300, 300, 200, 100);
  * ```
  */
-export function diamond(x: number, y: number, width: number, height: number): string {
+export function diamond(
+  x: number,
+  y: number,
+  width: number,
+  height: number,
+): string {
   const rx = width / 2;
   const ry = height / 2;
   return `
@@ -133,24 +144,30 @@ export function diamond(x: number, y: number, width: number, height: number): st
 
 /**
  * draw a parallelogram shape
- * 
+ *
  * @param x the position x of the parallelogram
- * 
+ *
  * @param y the position y of the parallelogram
- * 
+ *
  * @param width the width of the parallelogram
- * 
+ *
  * @param height the height of the parallelogram
- * 
+ *
  * @param offset the offset of the parallelogram
- * 
+ *
  * **Example Usage**
- * 
+ *
  * ```jsx
  * const p = rectangle.parallelogram(300, 300, 200, 100, 30);
  * ```
  */
-export function parallelogram(x: number, y: number, width: number, height: number, offset: number): string {
+export function parallelogram(
+  x: number,
+  y: number,
+  width: number,
+  height: number,
+  offset: number,
+): string {
   const mx = (width + Math.abs(offset)) / 2;
   return `
     M${x - mx} ${y - height / 2}
@@ -163,17 +180,17 @@ export function parallelogram(x: number, y: number, width: number, height: numbe
 
 /**
  * draw a basic rectangle aligned with top-left
- * 
+ *
  * @param x the position x of the rectangle
- * 
+ *
  * @param y the position y of the rectangle
- * 
+ *
  * @param width the width of the rectangle
- * 
+ *
  * @param height the height of the rectangle
- * 
+ *
  * **Example Usage**
- * 
+ *
  * ```jsx
  * const r = rectangle.basicAligned(300, 300, 200, 100);
  * ```
@@ -189,19 +206,19 @@ export function basicAligned(
 
 /**
  * draw a round rectangle aligned with top-left
- * 
+ *
  * @param x the position x of the rectangle
- * 
+ *
  * @param y the position y of the rectangle
- * 
+ *
  * @param width the width of the rectangle
- * 
+ *
  * @param height the height of the rectangle
- * 
+ *
  * @param radius the radius of the rectangle
- * 
+ *
  * **Example Usage**
- * 
+ *
  * ```jsx
  * const r = rectangle.roundAligned(300, 300, 200, 100, 20);
  * ```
@@ -211,24 +228,24 @@ export function roundAligned(
   y: number,
   width: number,
   height: number,
-  radius: number | Radius4
+  radius: number | Radius4,
 ): string {
   return round(x + width / 2, y + height / 2, width, height, radius);
 }
 
 /**
  * draw a diamond shape aligned with top
- * 
+ *
  * @param x the position x of the diamond
- * 
+ *
  * @param y the position y of the diamond
- * 
+ *
  * @param width the width of the diamond
- * 
+ *
  * @param height the height of the diamond
- * 
+ *
  * **Example Usage**
- * 
+ *
  * ```jsx
  * const d = rectangle.diamondAlignedTop(300, 300, 200, 100);
  * ```
@@ -244,17 +261,17 @@ export function diamondAlignedTop(
 
 /**
  * draw a diamond shape aligned with left
- * 
+ *
  * @param x the position x of the diamond
- * 
+ *
  * @param y the position y of the diamond
- * 
+ *
  * @param width the width of the diamond
- * 
+ *
  * @param height the height of the diamond
- * 
+ *
  * **Example Usage**
- * 
+ *
  * ```jsx
  * const d = rectangle.diamondAlignedLeft(300, 300, 200, 100);
  * ```
@@ -270,26 +287,44 @@ export function diamondAlignedLeft(
 
 /**
  * draw a parallelogram shape aligned with top-left
- * 
+ *
  * @param x the position x of the parallelogram
- * 
+ *
  * @param y the position y of the parallelogram
- * 
+ *
  * @param width the width of the parallelogram
- * 
+ *
  * @param height the height of the parallelogram
- * 
+ *
  * @param offset the offset of the parallelogram
- * 
+ *
  * **Example Usage**
- * 
+ *
  * ```jsx
  * const p = rectangle.parallelogramAligned(300, 300, 200, 100, 30);
  * ```
  */
-export function parallelogramAligned(x: number, y: number, width: number, height: number, offset: number): string {
+export function parallelogramAligned(
+  x: number,
+  y: number,
+  width: number,
+  height: number,
+  offset: number,
+): string {
   if (offset < 0) {
-    return parallelogram(x + width / 2 - offset / 2, y + height / 2, width, height, offset);
+    return parallelogram(
+      x + width / 2 - offset / 2,
+      y + height / 2,
+      width,
+      height,
+      offset,
+    );
   }
-  return parallelogram(x + width / 2 + offset / 2, y + height / 2, width, height, offset);
+  return parallelogram(
+    x + width / 2 + offset / 2,
+    y + height / 2,
+    width,
+    height,
+    offset,
+  );
 }

@@ -1,51 +1,54 @@
-# Impressionist  
+# Impressionist
 
-Impressionist is a **Path Generator** for **Canvas and SVG**.  
+Impressionist is a **Path Generator** for **Canvas and SVG**.
 
-No more struggling with trigonometric functions like `sin`, `cos`, or `exp` to draw basic shapes. Impressionist saves you time by providing a simple API to generate **single path strings**, ensuring optimal performance and maintainability.  
+No more struggling with trigonometric functions like `sin`, `cos`, or `exp` to draw basic shapes. Impressionist saves you time by providing a simple API to generate **single path strings**, ensuring optimal performance and maintainability.
 
-![Impressionist](docs/screenshot.png)  
+![Impressionist](docs/screenshot.png)
 
-## Supported Paths  
+## Supported Paths
 
-Impressionist provides a variety of path generators:  
+Impressionist provides a variety of path generators:
 
-### Basic Shapes  
-- **Circle**  
-  - Basic, aligned, or symmetrical  
-- **Ellipse** *(if applicable)*  
-- **Line**  
-  - Simple two-point line  
-  - Folded line  
+### Basic Shapes
 
-### Advanced Shapes  
-- **Steps**  
-  - Step line (with rounded corners, relative or absolute)  
-- **Polygon**  
-  - Custom polygons  
-  - Regular polygons  
-- **Rectangle**  
-  - Basic rectangle (with optional rounded corners)  
-  - Diamond (aligned or symmetrical)  
-  - Parallelogram (aligned or symmetrical)  
-- **Triangle**  
-  - Equilateral (aligned or symmetrical)  
-  - Isosceles (aligned or symmetrical)  
-- **Capsule** *(If more details are needed, clarify usage)*  
-- **Bezier Curve**  
-  - Quadratic  
-  - Cubic  
-  - Continuous quadratic  
-  - Continuous cubic  
-- **Arrows**  
-  - Basic, Vee, Triangle, Blunt, Dome, Bullet  
-- **Common Shapes**  
-  - Plus sign  
-  - Popup  
+- **Circle**
+  - Basic, aligned, or symmetrical
+- **Ellipse** _(if applicable)_
+- **Line**
+  - Simple two-point line
+  - Folded line
 
-## Installation  
+### Advanced Shapes
 
-Install via npm:  
+- **Steps**
+  - Step line (with rounded corners, relative or absolute)
+- **Polygon**
+  - Custom polygons
+  - Regular polygons
+- **Rectangle**
+  - Basic rectangle (with optional rounded corners)
+  - Diamond (aligned or symmetrical)
+  - Parallelogram (aligned or symmetrical)
+- **Triangle**
+  - Equilateral (aligned or symmetrical)
+  - Isosceles (aligned or symmetrical)
+- **Capsule** _(If more details are needed, clarify usage)_
+- **Bezier Curve**
+  - Quadratic
+  - Cubic
+  - Continuous quadratic
+  - Continuous cubic
+- **Arrows**
+  - Basic, Vee, Triangle, Blunt, Dome, Bullet
+- **Common Shapes**
+  - Plus sign
+  - Popup
+
+## Installation
+
+Install via npm:
+
 ```sh
 npm install impressionist --save
 ```
@@ -74,9 +77,10 @@ To quickly test Impressionist:
 
 1. Open `index.html` in the `/examples` directory (if your browser allows running local HTML files).
 2. Alternatively, start a local server to bypass permission issues:
-  ```bash
-  python3 -m http.server
-  ```
+
+```bash
+python3 -m http.server
+```
 
 ```javascript
 import { rectangle, polygon, curve, circle } from "impressionist";

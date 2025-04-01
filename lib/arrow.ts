@@ -1,23 +1,29 @@
 /**
  * draw a vee arrow
- * 
+ *
  * @param x the position x of the arrow
- * 
+ *
  * @param y the position y of the arrow
- * 
+ *
  * @param width the width of the arrow
- * 
+ *
  * @param low the low height of the arrow
- * 
+ *
  * @param high the high height of the arrow
- * 
+ *
  * **Example Usage**
- * 
+ *
  * ```jsx
  * const a = arrow.vee(0, 0, 16, -6, 12);
  * ```
  */
-export function vee(x: number, y: number, width: number, low: number, high: number): string {
+export function vee(
+  x: number,
+  y: number,
+  width: number,
+  low: number,
+  high: number,
+): string {
   if (width <= 0 || low >= high || high <= 0) {
     return "";
   }
@@ -28,22 +34,27 @@ export function vee(x: number, y: number, width: number, low: number, high: numb
 
 /**
  * draw a basic arrow
- * 
+ *
  * @param x the position x of the arrow
- * 
+ *
  * @param y the position y of the arrow
- * 
+ *
  * @param width the width of the arrow
- * 
+ *
  * @param height the height of the arrow
- * 
+ *
  * **Example Usage**
- * 
+ *
  * ```jsx
  * const a = arrow.basic(0, 0, 16, 20);
  * ```
  */
-export function basic(x: number, y: number, width: number, height: number): string {
+export function basic(
+  x: number,
+  y: number,
+  width: number,
+  height: number,
+): string {
   if (width <= 0 || height <= 0) {
     return "";
   }
@@ -54,22 +65,27 @@ export function basic(x: number, y: number, width: number, height: number): stri
 
 /**
  * draw a triangle arrow
- * 
+ *
  * @param x the position x of the arrow
- * 
+ *
  * @param y the position y of the arrow
- * 
+ *
  * @param width the width of the arrow
- * 
+ *
  * @param height the height of the arrow
- * 
+ *
  * **Example Usage**
- * 
+ *
  * ```jsx
  * const a = arrow.triangle(0, 0, 16, 20);
  * ```
  */
-export function triangle(x: number, y: number, width: number, height: number): string {
+export function triangle(
+  x: number,
+  y: number,
+  width: number,
+  height: number,
+): string {
   if (width <= 0 || height <= 0) {
     return "";
   }
@@ -80,24 +96,30 @@ export function triangle(x: number, y: number, width: number, height: number): s
 
 /**
  * draw a blunt arrow
- * 
+ *
  * @param x the position x of the arrow
- * 
+ *
  * @param y the position y of the arrow
- * 
+ *
  * @param width the width of the arrow
- * 
+ *
  * @param low the low height of the arrow
- * 
+ *
  * @param high the high height of the arrow
- * 
+ *
  * **Example Usage**
- * 
+ *
  * ```jsx
  * const arrow = arrow.blunt(0, 0, 16, 12, 24);
  * ```
  */
-export function blunt(x: number, y: number, width: number, low: number, high: number): string {
+export function blunt(
+  x: number,
+  y: number,
+  width: number,
+  low: number,
+  high: number,
+): string {
   if (width <= 0 || low <= 0 || low >= high) {
     return "";
   }
@@ -108,17 +130,17 @@ export function blunt(x: number, y: number, width: number, low: number, high: nu
 
 /**
  * draw a dome arrow
- * 
+ *
  * @param x the position x of the arrow
- * 
+ *
  * @param y the position y of the arrow
- * 
+ *
  * @param width the width of the arrow
- * 
+ *
  * @param low the lower height of the arrow
- * 
+ *
  * **Example Usage**
- * 
+ *
  * ```jsx
  * const arrow = arrow.dome(0, 0, 16, 12);
  * ```
@@ -134,22 +156,27 @@ export function dome(x: number, y: number, width: number, low: number): string {
 
 /**
  * draw a bullet arrow
- * 
+ *
  * @param x the position x of the arrow
- * 
+ *
  * @param y the position y of the arrow
- * 
+ *
  * @param width the width of the arrow
- * 
+ *
  * @param height the height of the arrow
- * 
+ *
  * **Example Usage**
- * 
+ *
  * ```jsx
  * const arrow = arrow.bullet(0, 0, 12, 18);
  * ```
  */
-export function bullet(x: number, y: number, width: number, height: number): string {
+export function bullet(
+  x: number,
+  y: number,
+  width: number,
+  height: number,
+): string {
   if (width <= 0 || height <= 0) {
     return "";
   }
