@@ -6,19 +6,10 @@
   "type": "module",
   "typings": "types/index.d.ts",
   "types": "types/index.d.ts",
-  "keywords": [
-    "graph",
-    "canvas",
-    "svg",
-    "path",
-    "generate"
-  ],
+  "keywords": ["graph", "canvas", "svg", "path", "generate"],
   "author": "Challen Ai <fengyiai@gmail.com>",
   "license": "MIT",
-  "files": [
-    "lib",
-    "types"
-  ],
+  "files": ["lib", "types"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/challenai/impressionist.git"
