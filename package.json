@@ -1,7 +1,7 @@
 {
   "name": "impressionist",
   "module": "lib/index.min.js",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "light weight path generation library for canvas and svg",
   "type": "module",
   "typings": "types/index.d.ts",
@@ -25,14 +25,14 @@
   },
   "scripts": {
     "build": "tsc && esbuild dist/*.js --bundle --minify --target=chrome58,firefox57,safari11,edge16 --format=esm --outdir=dist/lib/ --out-extension:.js=.min.js",
-    "lint": "eslint lib/**"
+    "lint": "biome lint --write lib/*",
+    "format": "biome format --write lib/*"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
   "devDependencies": {
-    "esbuild": "0.25.1",
-    "eslint": "^9.22.0",
-    "typescript-eslint": "^8.26.1"
+    "@biomejs/biome": "1.9.4",
+    "esbuild": "0.25.1"
   }
 }

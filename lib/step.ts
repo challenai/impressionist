@@ -1,21 +1,26 @@
 /**
  * draw a baisc step line
- * 
+ *
  * @param x the start point x of the step line
- * 
+ *
  * @param y the start point y of the step line
- * 
+ *
  * @param pathes the points' array of the step line, start from x axis
- * 
+ *
  * @param radius the round radius of the step line
- * 
+ *
  * **Example Usage**
- * 
+ *
  * ```jsx
  * const s = step.basic([120, 30, -60]);
  * ```
  */
-export function basic(x: number, y: number, pathes: number[], radius?: number): string {
+export function basic(
+  x: number,
+  y: number,
+  pathes: number[],
+  radius?: number,
+): string {
   if (!pathes || pathes.length <= 2) return relative(x, y, pathes);
 
   const pathes_: number[] = [];
@@ -35,25 +40,29 @@ export function basic(x: number, y: number, pathes: number[], radius?: number): 
   return relative(x, y, pathes_, radius);
 }
 
-
 /**
  * draw a baisc step line (relative path)
- * 
+ *
  * @param x the start point x of the step line
- * 
+ *
  * @param y the start point y of the step line
- * 
+ *
  * @param pathes the pathes' array of the step line, start from x axis
- * 
+ *
  * @param radius the round radius of the step line
- * 
+ *
  * **Example Usage**
- * 
+ *
  * ```jsx
  * const s = step.basic([120, 30, -60]);
  * ```
  */
-export function relative(x: number, y: number, pathes: number[], radius?: number): string {
+export function relative(
+  x: number,
+  y: number,
+  pathes: number[],
+  radius?: number,
+): string {
   if (!pathes) return "";
   if (radius) return _round(x, y, pathes, radius);
 
@@ -73,17 +82,17 @@ export function relative(x: number, y: number, pathes: number[], radius?: number
 
 /**
  * draw a round step line with given radius
- * 
+ *
  * @param x the start point x of the step line
- * 
+ *
  * @param y the start point y of the step line
- * 
+ *
  * @param pathes the pathes' array of the step line, 0: x axis, 1: y axis
- * 
+ *
  * @param radius the round radius of the step line
- * 
+ *
  * **Example Usage**
- * 
+ *
  * ```jsx
  * const s = step.round([
  *   [0, 120],
@@ -96,7 +105,7 @@ export function _round(
   x: number,
   y: number,
   pathes: number[],
-  radius: number
+  radius: number,
 ): string {
   if (!pathes || pathes.length < 2) return "";
   let horizontal = true;
@@ -104,7 +113,11 @@ export function _round(
   let nextPath = pathes[0];
   let path = `M${x} ${y}`;
   for (let i = 0; i < pathes.length - 1; i++) {
-    const r = Math.min(Math.abs(pathes[i]) / 2, Math.abs(pathes[i + 1]) / 2, radius);
+    const r = Math.min(
+      Math.abs(pathes[i]) / 2,
+      Math.abs(pathes[i + 1]) / 2,
+      radius,
+    );
     const d = pathes[i] > 0 === pathes[i + 1] > 0;
     if (horizontal) {
       const dx = pathes[i] > 0 ? r : -r;

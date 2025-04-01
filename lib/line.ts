@@ -1,21 +1,21 @@
 export interface Point {
   x: number;
   y: number;
-};
+}
 
 /**
  * draw a basic line
- * 
+ *
  * @param x the start point x of the line
- * 
+ *
  * @param y the start point y of the line
- * 
+ *
  * @param x1 the end point x of the line
- * 
+ *
  * @param y1 the end point y of the line
- * 
+ *
  * **Example Usage**
- * 
+ *
  * ```jsx
  * const l = line.basic(20, 10, 30, 50);
  * ```
@@ -26,11 +26,11 @@ export function basic(x: number, y: number, x1: number, y1: number): string {
 
 /**
  * draw a fold line
- * 
+ *
  * @param points the points' array of the fold line
- * 
+ *
  * **Example Usage**
- * 
+ *
  * ```jsx
  * const c = line.fold([
  *   [120, 30],
@@ -46,11 +46,11 @@ export function fold2(points: number[][]): string {
 
 /**
  * draw a fold line
- * 
+ *
  * @param points the points' array of the fold line
- * 
+ *
  * **Example Usage**
- * 
+ *
  * ```jsx
  * const c = line.fold([
  *   {x: 120, y: 30},
